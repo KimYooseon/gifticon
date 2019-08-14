@@ -1,0 +1,39 @@
+{% extends 'base.html'%}
+
+
+<body>
+    <!--제목 block사이에 입력하면 됩니다.-->
+    {% block title %}
+    
+    {% endblock %}
+    <!--타이틀 끝-->
+
+
+    <!--컨텐츠 block사이에 입력하면 됩니다.-->
+    {% block contents %}
+<br><br><br><br><br><br><br><br>
+    <div class="card" style="text-align: center;  width: 500px; margin: 0 auto; border-width:3px;border-radius: 25px;border-color:#eedd5d;">
+
+            <div class="card-body">
+                    <img src="{{productpay.productimg.url}}" height="200" alt=""><br><br>
+                    <img src="{{productpay.file.url}}" height="200" alt=""><br>
+              <h2 class="card-title">{{productpay.lowerlimit}}원 결제완료!</h2><br>
+              <p class="card-text">    <h3><strong>{{productpay.pbrand}}</strong></h3>
+                <h4>{{productpay.pitem}}</h4></p></p>
+             <br><br>
+    <a class="button_round" href="{% url 'delete' productpay.id %}">완료</a>
+
+            </div>
+          </div>
+
+    
+    <br><br>
+
+
+</div>
+
+
+    {%endblock%}
+    <!--컨텐츠 끝-->
+
+</body>

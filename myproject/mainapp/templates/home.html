@@ -1,0 +1,204 @@
+{% extends 'base.html' %}
+
+
+{% block contents %}
+
+<!--Start Side bar-->
+<script type="text/javascript">
+  function scroll_follow(id) {
+    $(window).scroll(function ()  //스크롤이 움직일때마다 이벤트를 발생시키고   
+    {
+      var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
+      $(id).stop().animate({ top: position + "px" }, 1); //해당 오브젝트 위치값 재설정    
+    });
+  }
+  scroll_follow("#scroll");
+  $(document).ready(function () {
+    for (var i = 0; i < 10; i++) { $('#brr').html($('#brr').html() + "<br>" + i); }
+  });
+</script>
+
+<div id="scroll" style="position:absolute;right:100; margin-top: 400px; margin-left: 15px;">
+  <br><br><br>
+  <div class="card"
+    style="border:1px ;border: 2px solid gray;width:100%;background-color: rgba( 255, 255, 255, 1 );border-radius: 15px;">
+    <p>
+      <form action="{%url 'home' %}" method="POST">{% csrf_token %}
+        <div style="border-bottom: 1px solid rgba(128, 128, 128, 0.329) ; ">
+          <h4 style="text-align:center;"><strong>Brand</strong></h4>
+          <input type="hidden" name="brand" value="all">
+          &nbsp<input type="checkbox" name="brand" value="스타벅스">&nbsp스타벅스<br>
+          &nbsp<input type="checkbox" name="brand" value="투썸플레이스">&nbsp투썸플레이스<br>
+          &nbsp<input type="checkbox" name="brand" value="all">&nbsp전체 브랜드<br><br>
+        </div>
+
+        <div style="">
+          <h4 style="text-align:center;"><strong>Sale type</strong></h4>
+          <input type="hidden" name="saletype" value="all">
+          &nbsp<input type="checkbox" name="saletype" value="경매">&nbsp경매<br>
+          &nbsp<input type="checkbox" name="saletype" value="급매">&nbsp급매<br>
+          &nbsp<input type="checkbox" name="saletype" value="all">&nbsp전체<br>
+        </div>
+        <div>
+          <input class="button" type="submit" style=" margin: 10px; margin-bottom: 0px; border-radius: 12px; padding: -10px;" value="Search!">
+        </div>
+      </form>
+    </p>
+  </div>
+</div>
+
+
+
+<!--Start Nav bar-->
+<p style="margin: 50px;"> &nbsp</p>
+
+<p>
+  <div style="border:1px ;float:left;width:25%;padding: 10px; border-bottom: 5px solid black;">
+    <a class="nav-link" href="{%url 'home' %}" style="font-size: 25px;"> Home <span class="sr-only">(current)</span></a>
+  </div>
+
+  <div style="border:1px ;float:left;width:25%;padding: 10px; border-bottom: 5px solid black;">
+    <a class="nav-link" href="{%url 'about' %}" style="font-size: 25px;">About</a>
+  </div>
+
+  <div style="border:1px ;float:left;width:25%;padding: 10px; border-bottom: 5px solid black;">
+    <a class="nav-link" href="{%url 'upload_file' %}" style="font-size: 25px;">
+      <span class="glyphicon glyphicon-gift"aria-hidden="true"></span>&nbspRegister
+    </a>
+  </div>
+
+  <div style="border:1px ;float:left;width:25%;padding: 10px; border-bottom: 5px solid black;">
+      <a class="nav-link" href="{%url 'mypage' %}" style="font-size: 25px;">
+          <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbspMyPage
+        </a>
+  </div>
+</p>
+
+<p style="margin: 150px;">&nbsp</p>
+
+
+
+
+
+<!--Start Detail-->
+{% if details %}
+{%ifequal details.saletype "경매"%}
+<!--BID-->
+<div class="card mb-5" style="max-width: 800px; display: block; margin: 0px auto; ">
+  <div class="row-no-gutters">
+    <div class="col-md-4">
+      <img src="{{details.productimg.url}}" height="400" alt="" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h3 class="card-title">{{details.pbrand}}</h3>
+        <h4 class="card-title">{{details.pitem}}</h4>
+        <p class="card-text">
+          상품분류: {{details.saletype}}<br>
+          하한가:&nbsp{{details.lowerlimit}}<br>
+          입찰가: {{details.bidprice}}<br>
+          입찰자:{{details.biduser}}<br>
+          원가:&nbsp{{details.originalprice}}<br>
+          작성자:&nbsp{{details.user_id}}
+          <form method="POST" action="{%url 'auction' details.id %}">
+            <input type="number" name="bidprice">
+            <input type="submit">
+          </form>
+        </p>
+
+        <a class="button" href="{%url 'buy' details.id%}" role="button">구매</a>
+        <a class="btn btn-primary" href="{%url 'upload_file' %}" role="button">상품등록</a>
+        <a class="btn btn-primary" href="{%url 'home' %}" role="button">돌아가기</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{%else%}
+<!--Just-->
+<div style="">
+<div class="card mb-5" style="max-width: 800px; display: block; margin: 0px auto; ">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="{{details.productimg.url}}" height="300" alt="" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h3 class="card-title">{{details.pbrand}}</h3>
+        <h4 class="card-title">{{details.pitem}}</h4>
+        <p class="card-text">
+          상품분류: {{details.saletype}}<br>
+          판매가:&nbsp{{details.lowerlimit}}<br>
+          원가:&nbsp{{details.originalprice}}<br>
+          작성자:&nbsp{{details.user_id}}</p>
+<br>
+        <a class="button_round" href="{%url 'buy' details.id%}">구매</a>
+        <a class="button_round" href="{%url 'upload_file' %}">상품등록</a>
+        <a class="button_round" href="{%url 'home' %}">돌아가기</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%endifequal%}
+{%endif%}
+
+
+
+<!--Start Sort-->
+<p style="text-align: right; grid-gap: 1rem; margin-right: 10rem;">
+  <a style="text-decoration: none; color: rgb(53, 52, 52); font-size-adjust: 8px;" href="{%url 'home' 2 1 %}">
+    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>최신순&nbsp&nbsp
+  </a>
+  <a style="text-decoration: none; color: rgb(53, 52, 52); font-size-adjust: 8px;"
+    href="{%url 'home' 2 2 %}">낮은가격순&nbsp&nbsp </a>
+  <a style="text-decoration: none; color: rgb(53, 52, 52); font-size-adjust: 8px;" href="{%url 'home' 2 3 %}">높은가격순 </a>
+</p>
+
+
+<!--Start// Show products-->
+<div class="card-group">
+  {% for u in posts %}
+  <a href="{%url 'home' 1 u.id %}" style="text-decoration: none;" class="button">
+    <div class="card" style="border-color: rgba(255,255,255,1);">
+      <img src="{{u.productimg.url}}" height="200" width="100%" alt="" text-align:center>
+      <div class="card-body">
+        <h5 class="card-title">{{u.pbrand}}</h5>
+        <h5 class="card-title">{{u.pitem}}</h5>
+        <p class="card-text">{{u.lowerlimit}}</p>
+
+
+      </div>
+    </div>
+  </a>
+  {%endfor%}
+</div>
+
+
+
+<!--Start Pagination-->
+<nav style="margin-top: -50px;">
+  <ul class="pager">
+    {% if posts.has_previous %}
+    <li><a href="?page={{posts.previous_page_number}}">Prev</a></li>
+    {%else%}
+    <li class="previous disabled"><a href="#">Prev</a></li>
+    {% endif %}
+
+    <span>&nbsp&nbsp{{posts.number}}</span>
+    <span> of</span>
+    <span> {{posts.paginator.num_pages}}&nbsp&nbsp</span>
+
+    {%if posts.has_next%}
+    <li><a href="?page={{posts.next_page_number}}">Next</a></li>
+    {%else%}
+    <li class="next disabled"><a href="#">Next</a></li>
+    {% endif %}
+  </ul>
+</nav>
+
+
+
+
+{%endblock%}

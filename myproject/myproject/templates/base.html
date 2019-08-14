@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700" rel="stylesheet">
+  <link href="https://fontastic.s3.amazonaws.com/YKLiEB5nKeTck7NdBGoGKY/icons.css" rel="stylesheet">
+
+  <!-- 합쳐지고 최소화된 최신 CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+  <!-- 부가적인 테마 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+  <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+
+  <!--여기 이하 head는 건드리지 마세용~-->
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+
+  <style>
+    #Login {
+      border-bottom: 1px solid black;
+      background-color: black;
+      padding: 5px 120px;
+      height: 30px;
+    }
+
+    #hello {
+      float: left;
+      color: white;
+    }
+
+    #icon-button {
+      float: right;
+    }
+
+    .btn {
+      background-color: black;
+      border: none;
+      color: white;
+      font-size: 13px;
+      padding: 0px 10px;
+      display: inline-block;
+      text-align: center;
+      padding-top: 0px;
+    }
+
+    .glyphicon {
+      color: #f2d500;
+    }
+
+    /*네브바 시작*/
+
+    nav {
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      margin: 5rem;
+    }
+
+    .nav-item {
+      padding: 5px 20px;
+    }
+
+
+    h1 {
+      font-family: 'Anton', sans-serif;
+      padding: 20px 50px;
+      text-align: center;
+      font-size: 80px;
+    }
+
+
+
+
+    #card {
+      flex: 500px;
+      height: 200px;
+      text-align: center;
+      margin: 50px;
+      background: #fcfcfc;
+
+    }
+
+    a {
+      text-align: center;
+      color: black;
+
+    }
+
+    .card-body {
+      padding: 10%;
+    }
+
+    .card-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-gap: 1rem;
+      margin: 15rem;
+      margin-top: -5px;
+      
+    }
+
+    #card-group {
+      width: 20%;
+    }
+
+    #sort-select {
+      float: right;
+    }
+
+    .button {
+      background-color: white;
+      color: black;
+      border: 3px solid #f2d500;
+      padding: 8px 22px;
+      border-radius: 12px;
+
+    }
+    .row-no-gutters{
+      background-color: white;
+      color: black;
+      border: 3px solid #f2d500;
+      padding: 8px 22px;
+      border-radius: 12px;
+    }
+    .container {
+      text-align: center;
+      font-size: 25px;
+    }
+
+    .navbar-nav {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 23rem;
+      font-size: 20px;
+    }
+
+    .pagebutton {
+      display: block;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      border: 1;
+      font-size: 15px;
+      color: #000000;
+      background-color: rgb(255, 255, 255);
+    }
+
+    @font-face {
+      font-family: neon;
+      src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+    }
+
+    .containers {
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+      background-color: #ffffff;
+      height: 200px;
+      width: 5000px;
+
+    }
+
+    .neon {
+      font-family: neon;
+      color: #FB4264;
+      font-size: 9vw;
+      line-height: 9vw;
+      text-shadow: 0 0 3vw #F40A35;
+      background-color: #000000;
+
+    }
+
+    .flux {
+      font-family: neon;
+      color: #426DFB;
+      font-size: 8vw;
+      line-height: 3vw;
+      text-shadow: 0 0 1vw rgb(0, 0, 0);
+      vertical-align: middle;
+      z-index: 1;
+    }
+
+    .neon {
+      animation: neon 1s ease infinite;
+      -moz-animation: neon 1s ease infinite;
+      -webkit-animation: neon 1s ease infinite;
+    }
+
+    @keyframes neon {
+
+      0%,
+      100% {
+        text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+        color: #FED128;
+      }
+
+      50% {
+        text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+        color: #806914;
+      }
+    }
+
+    .flux {
+      animation: flux 2s linear infinite;
+      -moz-animation: flux 2s linear infinite;
+      -webkit-animation: flux 2s linear infinite;
+      -o-animation: flux 2s linear infinite;
+    }
+
+    @keyframes flux {
+
+      0%,
+      100% {
+        text-shadow: 0 0 1vw rgb(102, 67, 2), 0 0 3vw rgb(255, 159, 16), 0 0 10vw rgb(255, 171, 16), 0 0 10vw rgb(255, 211, 16), 0 0 .4vw rgb(254, 200, 139), .5vw .5vw .1vw #805a14;
+        color: rgb(240, 229, 75);
+      }
+
+      50% {
+        text-shadow: 0 0 .2vw #805a08, 0 0 1.5vw #806408, 0 0 5vw #805008, 0 0 5vw #805608, 0 0 .2vw #806e08, .5vw .5vw .1vw rgb(64, 34, 10);
+        color: rgb(155, 142, 27);
+      }
+    }
+    .button_round {
+      color: black !important;
+      white-space: nowrap;
+      background-color: #ffe524;
+      padding: 10px 20px;
+      border: 0;
+      border-radius: 12px;
+      transition: all 150ms ease-out;
+      
+    }
+
+
+
+  </style>
+</head>
+
+<body>
+
+   
+
+
+  <!--여기까지 상단 -->
+
+  <div id="Login" style="clear: both">
+    <p id="hello">Hello {{user.username}} !</p>
+    {% if user.is_active %}
+    <div id="icon-button">
+      <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span><a class="btn" href="{%url 'logout' %}"
+        role="button">Logout</a>
+    </div>
+    {% else %}
+    <div id="icon-button">
+      <span class="glyphicon glyphicon-user" aria-hidden="true"></span><a class="btn" href="{%url 'login' %}"
+        role="button">Login</a>
+      <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span><a class="btn" href="{%url 'signup' %}"
+        role="button">Signup</a>
+    </div>
+    {% endif %}
+  </div>
+
+
+  <!--여기까지 상단 -->
+
+
+  <br>
+
+  <div class="containers">
+    <br><br><br><br>
+    <a href="{%url 'home' %}" style="text-decoration: none;">
+      <div class="flux">Jerky</div>
+    </a>
+  </div>
+  {% block title %}
+  <!--여기에 제목 삽입-->
+  {% endblock %}
+  <!--여기에 컨텐츠 삽입-->
+  {% block contents %}
+
+
+  {% endblock %}
+  <br><br><br><br>
+  <div style="border-top: 1px solid gray;margin-left: 100px;margin-right:100px;">
+
+      <div class="row">
+        <div class="col-sm">
+          <p><br>
+            <h5>Jerky(주) \ 대표: 윤세란<br></h5>
+            조병건 김유선 황윤영 박주현 이가은<br>
+            서울특별시 동대문구 이문동 이문로 107
+          </p>
+  
+        </div>
+  
+        <div class="col-sm">
+          <p><br>
+            365 고객센터
+            <div style="font-size:25px;">1234-5678</div>
+            <br>
+            Fax:02-0202-0202 \ email:letsgoJerky@likelion.org
+  
+          </p>
+        </div>
+      </div>
+      <br><br><br>
+</body>
+</html>

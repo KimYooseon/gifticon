@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700" rel="stylesheet">
+    <link href="https://fontastic.s3.amazonaws.com/YKLiEB5nKeTck7NdBGoGKY/icons.css" rel="stylesheet">
+
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+
+<style>
+ #Login {
+      border-bottom: 1px solid black;
+      background-color: black;
+      padding: 5px 120px;
+      height: 30px;
+    }
+
+    #hello {
+      float: left;
+      color: white;
+    }
+
+    #icon-button {
+      float: right;
+    }
+
+    .btn {
+      background-color: black;
+      border: none;
+      color: white;
+      font-size: 13px;
+      padding: 0px 10px;
+      display: inline-block;
+      text-align: center;
+      padding-top: 0px;
+    }
+
+    .glyphicon {
+      color: #f2d500;
+    }
+
+
+   
+
+    @font-face {
+      font-family: neon;
+      src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+    }
+
+    .containers {
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+      background-color: #ffffff;
+      height: 200px;
+      width: 5000px;
+
+    }
+
+    .neon {
+      font-family: neon;
+      color: #FB4264;
+      font-size: 9vw;
+      line-height: 9vw;
+      text-shadow: 0 0 3vw #F40A35;
+      background-color: #000000;
+
+    }
+
+    .flux {
+      font-family: neon;
+      color: #426DFB;
+      font-size: 8vw;
+      line-height: 3vw;
+      text-shadow: 0 0 1vw rgb(0, 0, 0);
+      vertical-align: middle;
+      z-index: 1;
+    }
+
+    .neon {
+      animation: neon 1s ease infinite;
+      -moz-animation: neon 1s ease infinite;
+      -webkit-animation: neon 1s ease infinite;
+    }
+
+    @keyframes neon {
+
+      0%,
+      100% {
+        text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+        color: #FED128;
+      }
+
+      50% {
+        text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+        color: #806914;
+      }
+    }
+
+    .flux {
+      animation: flux 2s linear infinite;
+      -moz-animation: flux 2s linear infinite;
+      -webkit-animation: flux 2s linear infinite;
+      -o-animation: flux 2s linear infinite;
+    }
+
+    @keyframes flux {
+
+      0%,
+      100% {
+        text-shadow: 0 0 1vw rgb(102, 67, 2), 0 0 3vw rgb(255, 159, 16), 0 0 10vw rgb(255, 171, 16), 0 0 10vw rgb(255, 211, 16), 0 0 .4vw rgb(254, 200, 139), .5vw .5vw .1vw #805a14;
+        color: rgb(240, 229, 75);
+      }
+
+      50% {
+        text-shadow: 0 0 .2vw #805a08, 0 0 1.5vw #806408, 0 0 5vw #805008, 0 0 5vw #805608, 0 0 .2vw #806e08, .5vw .5vw .1vw rgb(64, 34, 10);
+        color: rgb(155, 142, 27);
+      }
+    }    
+h1, h2, h3, h4, h5, h6 {
+    color: #2c3145;
+}
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    outline: none;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.section_all {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    min-height: 100vh;
+}
+.section-title {
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.section-subtitle {
+    letter-spacing: 0.4px;
+    line-height: 28px;
+    max-width: 550px;
+}
+
+.section-title-border {
+    background-color: #000;
+    height: 1 3px;
+    width: 44px;
+}
+
+.section-title-border-white {
+    background-color: #fff;
+    height: 2px;
+    width: 100px;
+}
+.text_custom {
+    color: #dbc200;
+}
+
+.about_icon i {
+    font-size: 22px;
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    display: inline-block;
+    background: #e7d862;
+    border-radius: 35px;
+    color: #f2d500;
+    box-shadow: 0 6px 15px -2px #a79300;
+}
+
+.about_header_main .about_heading {
+    max-width: 450px;
+    font-size: 24px;
+}
+
+.about_icon span {
+    position: relative;
+    top: -10px;
+}
+
+.about_content_box_all {
+    padding: 28px;
+}
+</style>
+</head>
+<body>
+        <div id="Login" style="clear: both">
+                <p id="hello">Hello {{user.username}} !</p>
+                {% if user.is_active %}
+                <div id="icon-button">
+                  <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span><a class="btn" href="{%url 'logout' %}"
+                    role="button">Logout</a>
+                  <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span><a class="btn" href="{%url 'mypage' %}"
+                    role="button">MyPage</a>
+                </div>
+                {% else %}
+                <div id="icon-button">
+                  <span class="glyphicon glyphicon-user" aria-hidden="true"></span><a class="btn" href="{%url 'login' %}"
+                    role="button">Login</a>
+                  <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span><a class="btn" href="{%url 'signup' %}"
+                    role="button">Signup</a>
+                </div>
+                {% endif %}
+              </div>
+              <br>
+
+              <div class="containers">
+                <br><br><br><br>
+                <a href="{%url 'home' %}" style="text-decoration: none;">
+                  <div class="flux">Jerky</div>
+                </a>
+              </div>
+
+
+              <p style="margin: 50px;"> &nbsp</p>
+
+
+  
+   <p style="margin-left: 400px;margin-right: 400px; border-bottom: 5px solid rgb(161, 161, 161);">&nbsp</p> 
+   
+<section class="section_all" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section_title_all text-center">
+                    <h3 class="font-weight-bold">Welcome To <span class="text-custom" style="color: #dbc200;">"Jerky"</span></h3>
+                    <p class="section_subtitle mx-auto text-muted"><h5><strong>[저ː기] : ‘저’렴한 ‘기’프티콘</strong>
+                        </h5></p>
+                    <div class="">
+                        <i class=""></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="row vertical_content_manage mt-5">
+            <div class="col-lg-6">
+                <div class="about_header_main mt-3">
+                    <div class="about_icon_box">
+                        <p class="text_custom font-weight-bold"><br><br>저렴한 기프티콘 판매∙구매 중개 서비스 “Jerky”</p>
+                    </div>
+                    <h4 class="about_heading text-capitalize font-weight-bold mt-4">"Jerky"는 <br>기프티콘 판매∙구매 중개 사이트입니다.</h4><br>
+                    <p class="text-muted mt-3">필요없는 기프티콘은 합리적인 가격에 판매하고,<br>
+                        나에게 필요한 기프티콘은 저렴하게 구매하자!</p>
+
+                  
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="img_about mt-3">
+                    <img src="https://icon-library.net/images/connect-people-icon/connect-people-icon-1.jpg" style="opacity: 0.2;"alt="" class="img-fluid mx-auto d-block">
+                </div>
+            </div>
+        </div>
+
+        <br><br><br><br><h3 style="text-align: center;">Jerky는 <strong style="color: #dbc200">약속</strong>합니다.</h3>
+        <div class="row mt-3">
+            <div class="col-lg-4">
+                <div class="about_content_box_all mt-3">
+                    <div class="about_detail text-center">
+                        <div class="about_icon">
+                            <i class="fas fa-pencil-alt"></i>
+                        </div>
+                        <h5 class="text-dark text-capitalize mt-3 font-weight-bold">실시간 업데이트</h5>
+                        <p class="edu_desc mt-3 mb-0 text-muted">실시간으로 업데이트되는 <br>다양한 종류의 기프티콘 </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="about_content_box_all mt-3">
+                    <div class="about_detail text-center">
+                        <div class="about_icon">
+                            <i class="fab fa-angellist"></i>
+                        </div>
+                        <h5 class="text-dark text-capitalize mt-3 font-weight-bold">합리적인 가격대</h5>
+                        <p class="edu_desc mb-0 mt-3 text-muted"> 판매자와 구매자 모두가 만족하는<br> 합리적인 기프티콘 가격대 형성 </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="about_content_box_all mt-3">
+                    <div class="about_detail text-center">
+                        <div class="about_icon">
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                        <h5 class="text-dark text-capitalize mt-3 font-weight-bold">신뢰가능한 거래</h5>
+                        <p class="edu_desc mb-0 mt-3 text-muted">철저한 사용여부 사전 검증으로<br> 믿을 수 있는 거래</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+</body>
